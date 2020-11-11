@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input {
+  display: block;
+}
+
+.check {
+  display: flex;
+}
+
+.check label {
+  margin-left: 2rem;
+}
+
+.perspective-card {
+  width: 200px;
+  height: 300px;
+  margin: 6rem;
+  background-color: violet;
+  border: 3px solid darkviolet;
+  transition-duration: 0.3s;
+  position: relative;
+  animation: example 5s 2s infinite;
+  cursor: pointer;
+}
+
+.left:hover {
+  /* transform: rotateY(20deg); */
+  transform: perspective(250px) rotateY(20deg);
+}
+
+.right:hover {
+  transform: perspective(250px) rotateY(-20deg);
+}
+
+.circle {
+  background: green;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  animation: pulsing 2s infinite;
+}
+
+@keyframes example {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  50% {
+    background-color: blue;
+    background: red;
+    border-radius: 0;
+  }
+  100% {
+    transform: scale(0.5, 0.5);
+  }
+}
